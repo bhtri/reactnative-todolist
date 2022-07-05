@@ -1,22 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.body}>
         <Text style={styles.header}>Todo List</Text>
-        <View style={styles.item}>
-          <View style={styles.square}>
-            <Text style={styles.number}>01</Text>
-          </View>
-          <Text style={styles.content}>Lau nha</Text>
-        </View>
-        <View style={styles.item}>
-          <View style={styles.square}>
-            <Text style={styles.number}>02</Text>
-          </View>
-          <Text style={styles.content}>Rua chen</Text>
-        </View>
+        <ScrollView style={styles.items}>
+          <TouchableOpacity>
+            <View style={styles.item}>
+              <View style={styles.square}>
+                <Text style={styles.number}>01</Text>
+              </View>
+              <Text style={styles.content}>Lau nha</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.item}>
+              <View style={styles.square}>
+                <Text style={styles.number}>02</Text>
+              </View>
+              <Text style={styles.content}>Rua chen</Text>
+            </View>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
       <View style={styles.input}></View>
     </View>
@@ -37,6 +43,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#21a3d8',
     fontWeight: 'bold'
+  },
+  items: {
+    marginTop: 25,
   },
   item: {
     flexDirection: 'row',

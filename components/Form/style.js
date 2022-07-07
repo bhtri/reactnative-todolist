@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
+import color from './../../contains/color';
 
 export default styles = StyleSheet.create({
     addTask: {
@@ -12,26 +13,27 @@ export default styles = StyleSheet.create({
     input: {
         height: 44,
         width: '80%',
-        backgroundColor: '#fff',
+        backgroundColor: color.white,
         borderWidth: 1,
-        borderColor: '#21a3d0',
+        borderColor: color.primary,
         borderRadius: 20,
         paddingHorizontal: 20,
         paddingVertical: 10,
+        color: color.text,
     },
     iconWrapper: {
         width: 44,
         height: 44,
-        backgroundColor: '#21a3d0',
+        backgroundColor: color.primary,
         borderRadius: 44,
         borderWidth: 2,
-        borderColor: '#eff7f8',
+        borderColor: color.background,
         justifyContent: 'center',
         alignItems: 'center',
     },
     icon: {
         fontSize: 24,
-        color: '#fff',
+        color: color.white,
     },
 });
 

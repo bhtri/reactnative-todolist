@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
     },
     input: {
         height: 44,
-        width: '80%',
+        width: '85%',
         backgroundColor: color.white,
         borderWidth: 1,
         borderColor: color.primary,

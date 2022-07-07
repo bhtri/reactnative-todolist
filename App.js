@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import Task from './components/Task';
+import Form from './components/Form';
 import styles from './App.components.style';
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
 
         </ScrollView>
       </View>
-      <View style={styles.input}></View>
+      <Form />
     </View>
   );
 }

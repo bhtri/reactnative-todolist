@@ -19,7 +19,7 @@ export default function App() {
         <ScrollView style={styles.items}>
           {
             taskList.map((item, index) => {
-              return <Task key={item}/>
+              return <Task key={index} title={item} number={index+1}/>
             })
           }
         </ScrollView>

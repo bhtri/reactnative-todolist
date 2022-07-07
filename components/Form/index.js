@@ -1,9 +1,9 @@
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
 import React, { useState } from 'react'
 
 import styles from './style'
 
-export default function Form() {
+export default function Form(props) {
   const [task, setTask] = useState('')
 
   const handleAddTask = () => {
@@ -11,7 +11,9 @@ export default function Form() {
       alert('');
       return false;
     }
-    alert(task);
+    props.onAddTask(task);
+    setTask('');
+    Keyboard.dismiss();
   }
 
   return (
@@ -21,6 +23,7 @@ export default function Form() {
       style={styles.addTask}
     >
       <TextInput
+        value={task}
         onChangeText={(text) => setTask(text)}
         placeholder='Your Task'
         style={styles.input}

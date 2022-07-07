@@ -2,20 +2,29 @@ import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-nati
 import Task from './components/Task';
 import Form from './components/Form';
 import styles from './App.components.style';
+import { useState } from 'react';
 
 export default function App() {
+  const [taskList, setTaskList] = useState([]);
+
+  const handleAddTask = (task) => {
+    // Add task
+    setTaskList([...taskList, task]);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.body}>
         <Text style={styles.header}>Todo List</Text>
         <ScrollView style={styles.items}>
-          <Task />
-          <Task />
-          <Task />
-
+          {
+            taskList.map((item, index) => {
+              return <Task key={item}/>
+            })
+          }
         </ScrollView>
       </View>
-      <Form />
+      <Form onAddTask={handleAddTask}/>
     </View>
   );
 }

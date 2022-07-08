@@ -4,7 +4,7 @@ import styles from './style'
 
 const Task = (props) => {
     const { number } = props;
-    const numberText = number < 10 ? '0${number}' : number;
+    const numberText = number < 10 ? `0${number}` : number;
     const itemBg = number % 2 === 0 ? styles.even : styles.odd;
     return (
         <TouchableOpacity
